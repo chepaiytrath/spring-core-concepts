@@ -1,11 +1,11 @@
 package com.example.springcoreconcepts;
 
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.PrototypeBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usingapplicationcontext.PrototypeAppContextBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usingapplicationcontext.SingletonAppContextBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usinglookup.PrototypeLookupBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.PrototypeAppContextBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.SingletonAppContextBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usinglookup.PrototypeLookupBean;
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.SingletonBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usinglookup.SingletonLookupBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usinglookup.SingletonLookupBean;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -14,6 +14,8 @@ public class SpringCoreConceptsApplication {
 
     public static void main(String[] args) {
         //SpringApplication.run(SpringCoreConceptsApplication.class, args);
+        //SOLVING PROTOTYPE BEAN INJECTION INTO A SINGLETON BEAN
+        //https://www.baeldung.com/spring-inject-prototype-bean-into-singleton
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringCoreConceptsApplication.class);
         SingletonBean firstSB = context.getBean(SingletonBean.class);
         PrototypeBean firstPB = firstSB.getPrototypeBean();

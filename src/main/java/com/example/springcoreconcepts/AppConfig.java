@@ -2,8 +2,8 @@ package com.example.springcoreconcepts;
 
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.PrototypeBean;
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.SingletonBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usingapplicationcontext.PrototypeAppContextBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solve.usingapplicationcontext.SingletonAppContextBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.PrototypeAppContextBean;
+import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.SingletonAppContextBean;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

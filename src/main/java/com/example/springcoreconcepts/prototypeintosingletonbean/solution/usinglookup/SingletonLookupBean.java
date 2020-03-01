@@ -1,4 +1,4 @@
-package com.example.springcoreconcepts.prototypeintosingletonbean.solve.usinglookup;
+package com.example.springcoreconcepts.prototypeintosingletonbean.solution.usinglookup;
 
 import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.springcoreconcepts.prototypeintosingletonbean.solve.usingapplicationcontext;
+package com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext;
 
 public class PrototypeAppContextBean {
     public PrototypeAppContextBean() {
