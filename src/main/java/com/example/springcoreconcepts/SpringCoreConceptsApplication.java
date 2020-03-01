@@ -1,5 +1,7 @@
 package com.example.springcoreconcepts;
 
+import com.example.springcoreconcepts.multiplesingletonbeans.config.DependentBean;
+import com.example.springcoreconcepts.multiplesingletonbeans.config.SingletonBeanMultiple;
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.PrototypeBean;
 import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.PrototypeAppContextBean;
 import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.SingletonAppContextBean;
@@ -17,7 +19,7 @@ public class SpringCoreConceptsApplication {
         //SOLVING PROTOTYPE BEAN INJECTION INTO A SINGLETON BEAN
         //https://www.baeldung.com/spring-inject-prototype-bean-into-singleton
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringCoreConceptsApplication.class);
-        SingletonBean firstSB = context.getBean(SingletonBean.class);
+        /*SingletonBean firstSB = context.getBean(SingletonBean.class);
         PrototypeBean firstPB = firstSB.getPrototypeBean();
 
         SingletonBean secondSB = context.getBean(SingletonBean.class);
@@ -50,7 +52,13 @@ public class SpringCoreConceptsApplication {
 
 
         System.out.println("SINGLETON APP CONTEXT BEANS ARE EQUAL : " + firstSACB.equals(secondSACB));
-        System.out.println("PROTOTYPE APP CONTEXT BEANS ARE EQUAL : " + firstPACB.equals(secondPACB));
+        System.out.println("PROTOTYPE APP CONTEXT BEANS ARE EQUAL : " + firstPACB.equals(secondPACB));*/
+
+        SingletonBeanMultiple firstSBM = (SingletonBeanMultiple) context.getBean("SingletonBeanMultiple1");
+        SingletonBeanMultiple secondSBM = (SingletonBeanMultiple) context.getBean("SingletonBeanMultiple2");
+        DependentBean dependentBean = (DependentBean)  context.getBean(DependentBean.class);
+        System.out.println("SINGLETON MULTIPLE BEANS ARE EQUAL : " + firstSBM.equals(secondSBM));
+        System.out.println("DEPENDENT SINGLETON MULTIPLE BEAN : " + dependentBean.getSingletonBeanMultiple().getName());
 
     }
 

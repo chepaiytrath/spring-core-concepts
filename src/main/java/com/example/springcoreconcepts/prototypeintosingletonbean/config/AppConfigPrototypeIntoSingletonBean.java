@@ -1,4 +1,4 @@
-package com.example.springcoreconcepts;
+package com.example.springcoreconcepts.prototypeintosingletonbean.config;
 
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.PrototypeBean;
 import com.example.springcoreconcepts.prototypeintosingletonbean.basic.SingletonBean;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class AppConfig {
+public class AppConfigPrototypeIntoSingletonBean {
 
     @Bean
     @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
