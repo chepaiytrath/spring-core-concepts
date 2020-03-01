@@ -1,4 +1,4 @@
-package com.example.springcoreconcepts.prototypeintosingletonbean;
+package com.example.springcoreconcepts.prototypeintosingletonbean.basic;
 
 public class PrototypeBean {
     public PrototypeBean() {

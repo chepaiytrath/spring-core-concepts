@@ -1,4 +1,4 @@
-package com.example.springcoreconcepts.prototypeintosingletonbean;
+package com.example.springcoreconcepts.prototypeintosingletonbean.solve.usinglookup;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
