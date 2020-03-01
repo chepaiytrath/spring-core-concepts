@@ -1,13 +1,8 @@
 package com.example.springcoreconcepts;
 
-import com.example.springcoreconcepts.multiplesingletonbeans.config.DependentBean;
-import com.example.springcoreconcepts.multiplesingletonbeans.config.SingletonBeanMultiple;
-import com.example.springcoreconcepts.prototypeintosingletonbean.basic.PrototypeBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.PrototypeAppContextBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usingapplicationcontext.SingletonAppContextBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usinglookup.PrototypeLookupBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.basic.SingletonBean;
-import com.example.springcoreconcepts.prototypeintosingletonbean.solution.usinglookup.SingletonLookupBean;
+import com.example.springcoreconcepts.beanlifecycle.AppConfigBeanLifecycle;
+import com.example.springcoreconcepts.beanlifecycle.AwareBeanImpl;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -15,11 +10,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class SpringCoreConceptsApplication {
 
     public static void main(String[] args) {
-        //SpringApplication.run(SpringCoreConceptsApplication.class, args);
+        SpringApplication.run(SpringCoreConceptsApplication.class, args);
+
         //SOLVING PROTOTYPE BEAN INJECTION INTO A SINGLETON BEAN
         //https://www.baeldung.com/spring-inject-prototype-bean-into-singleton
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringCoreConceptsApplication.class);
-        /*SingletonBean firstSB = context.getBean(SingletonBean.class);
+
+        //Testing for Prototype injection into Singleton Bean starts
+        /*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringCoreConceptsApplication.class);
+        SingletonBean firstSB = context.getBean(SingletonBean.class);
         PrototypeBean firstPB = firstSB.getPrototypeBean();
 
         SingletonBean secondSB = context.getBean(SingletonBean.class);
@@ -53,13 +51,24 @@ public class SpringCoreConceptsApplication {
 
         System.out.println("SINGLETON APP CONTEXT BEANS ARE EQUAL : " + firstSACB.equals(secondSACB));
         System.out.println("PROTOTYPE APP CONTEXT BEANS ARE EQUAL : " + firstPACB.equals(secondPACB));*/
+        //Testing for Prototype injection into Singleton Bean ends
 
-        SingletonBeanMultiple firstSBM = (SingletonBeanMultiple) context.getBean("SingletonBeanMultiple1");
+
+        //Testing for multiple Singleton Beans starts
+        /*SingletonBeanMultiple firstSBM = (SingletonBeanMultiple) context.getBean("SingletonBeanMultiple1");
         SingletonBeanMultiple secondSBM = (SingletonBeanMultiple) context.getBean("SingletonBeanMultiple2");
         DependentBean dependentBean = (DependentBean)  context.getBean(DependentBean.class);
         System.out.println("SINGLETON MULTIPLE BEANS ARE EQUAL : " + firstSBM.equals(secondSBM));
-        System.out.println("DEPENDENT SINGLETON MULTIPLE BEAN : " + dependentBean.getSingletonBeanMultiple().getName());
+        System.out.println("DEPENDENT SINGLETON MULTIPLE BEAN : " + dependentBean.getSingletonBeanMultiple().getName());*/
+        //Testing for multiple Singleton Beans ends
 
+
+
+        //Testing for Bean lilfecycle starts
+        //https://dzone.com/articles/spring-bean-lifecycle
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfigBeanLifecycle.class);
+        AwareBeanImpl awareBeanImpl = (AwareBeanImpl) context.getBean("awareBean");
+        //Testing for Bean lilfecycle ends
     }
 
 }
