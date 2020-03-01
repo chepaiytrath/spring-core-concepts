@@ -66,8 +66,8 @@ public class SpringCoreConceptsApplication {
 
         //Testing for Bean lilfecycle starts
         //https://dzone.com/articles/spring-bean-lifecycle
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfigBeanLifecycle.class);
-        AwareBeanImpl awareBeanImpl = (AwareBeanImpl) context.getBean("awareBean");
+        /*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfigBeanLifecycle.class);
+        AwareBeanImpl awareBeanImpl = (AwareBeanImpl) context.getBean("awareBean");*/
         //Testing for Bean lilfecycle ends
     }
 
